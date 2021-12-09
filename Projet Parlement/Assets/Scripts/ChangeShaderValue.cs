@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeShaderValue : MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class ChangeShaderValue : MonoBehaviour
     public float delay = 5f;
     public float timer = 0;
     public bool waitDone = false;
-    public Renderer button;
+    public Image button;
+    public Text buttonText;
+    public GameObject activeButton;
 
     private float t;
 
@@ -27,6 +30,9 @@ public class ChangeShaderValue : MonoBehaviour
         shader.SetTexture("_MainTexture", image);
         parlement.enabled = false;
         button.enabled = false;
+        buttonText.enabled = false;
+        activeButton.SetActive(false);
+
 
     }
 
@@ -73,6 +79,8 @@ public class ChangeShaderValue : MonoBehaviour
         t += Time.deltaTime * speedCamera;
         Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(Vector3.zero), Quaternion.Euler(Vector3.right * 65), t);
         button.enabled = true;
+        buttonText.enabled = true;
+        activeButton.SetActive(true);
     }
 
     IEnumerator Wait(float delay)
