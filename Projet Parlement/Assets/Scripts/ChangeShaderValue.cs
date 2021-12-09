@@ -11,7 +11,12 @@ public class ChangeShaderValue : MonoBehaviour
     public float speed = 0.1f;
     private Vector3 lastPosition;
     public Renderer parlement;
-    public float speedCamera = 2;
+    public float speedCamera = 0.5f;
+    public bool rotationDone = false;
+    private bool isCoroutineExecuting = false;
+    public float delay = 5f;
+    public float timer = 0;
+    public bool waitDone = false;
 
     private float t;
 
@@ -20,6 +25,7 @@ public class ChangeShaderValue : MonoBehaviour
         value = 0;
         shader.SetTexture("_MainTexture", image);
         parlement.enabled = false;
+
     }
 
     private void Update()
@@ -39,15 +45,37 @@ public class ChangeShaderValue : MonoBehaviour
         if (value>=1)
         {
             parlement.enabled = true;
-            SetRotation();
+
+            if (rotationDone == false)
+            {
+                SetRotation();
+            }
         }
 
+            if (waitDone == true)
+            {
+                ReturnRotation();
+                waitDone = false;
+            }
     }
+
     private void SetRotation()
     {
         t += Time.deltaTime * speedCamera;
         Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(Vector3.right * 65), Quaternion.Euler(Vector3.zero), t);
+        StartCoroutine(Wait(delay));
     }
 
+    private void ReturnRotation()
+    {
+        t += Time.deltaTime * speedCamera;
+        Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(Vector3.zero), Quaternion.Euler(Vector3.right * 65), t);
+    }
 
+    IEnumerator Wait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        rotationDone = true;
+        waitDone = true;
+    }
 }
