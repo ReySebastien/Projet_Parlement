@@ -21,7 +21,7 @@ public class ChangeScene : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-            LoadLevel();
+            LoadNiveau1();
         }
     }
 }
