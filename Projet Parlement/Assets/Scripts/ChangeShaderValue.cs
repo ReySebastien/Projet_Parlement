@@ -21,6 +21,7 @@ public class ChangeShaderValue : MonoBehaviour
     public Image button;
     public Text buttonText;
     public GameObject activeButton;
+    public Image popUp;
 
     private float t;
 
@@ -32,7 +33,6 @@ public class ChangeShaderValue : MonoBehaviour
         button.enabled = false;
         buttonText.enabled = false;
         activeButton.SetActive(false);
-
 
     }
 
@@ -78,9 +78,11 @@ public class ChangeShaderValue : MonoBehaviour
     {
         t += Time.deltaTime * speedCamera;
         Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(Vector3.zero), Quaternion.Euler(Vector3.right * 65), t);
+        popUp.enabled = true;
         button.enabled = true;
         buttonText.enabled = true;
         activeButton.SetActive(true);
+        
     }
 
     IEnumerator Wait(float delay)

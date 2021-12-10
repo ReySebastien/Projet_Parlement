@@ -7,21 +7,8 @@ public class ChangeScene : MonoBehaviour
 {
     public string LevelToLoad;
 
-    void LoadNiveau1()
-    {
-        SceneManager.LoadScene("Niveau1");
-    }
-
-    void LoadLevel()
+    public void LoadLevel()
     {
         SceneManager.LoadScene(LevelToLoad);
-    }
-
-    private void Update()
-    {
-        if(Input.GetMouseButton(0))
-        {
-            LoadNiveau1();
-        }
     }
 }
