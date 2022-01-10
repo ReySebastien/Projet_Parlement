@@ -332,6 +332,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/ChangeScene.cs"
 "Assets/Scripts/ChangeShaderValue.cs"
+"Assets/Scripts/Direction.cs"
+"Assets/Scripts/DirectionStuct.cs"
 "Assets/Scripts/Draw.cs"
 "Assets/Scripts/FollowMouse.cs"
 "Assets/Scripts/QuitGame.cs"

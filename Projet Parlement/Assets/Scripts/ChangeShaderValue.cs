@@ -22,6 +22,8 @@ public class ChangeShaderValue : MonoBehaviour
     public Text buttonText;
     public GameObject activeButton;
     public Image popUp;
+    public Direction direction;
+    public DirectionStruct[] directionValue;
 
     private float t;
 
@@ -40,11 +42,44 @@ public class ChangeShaderValue : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-            print(Vector3.Distance(lastPosition, Input.mousePosition));
+            //print(Vector3.Distance(lastPosition, Input.mousePosition));
+            print((lastPosition - Input.mousePosition).normalized);
+
 
             if (Vector3.Distance(lastPosition,Input.mousePosition)>=tolerance)
             {
-                value += speed;
+                var MovementDirection = (lastPosition - Input.mousePosition).normalized;
+                var isMovementRight = (MovementDirection.x < -0.8 && MovementDirection.y > -0.3 && MovementDirection.y < 0.3);
+                var isMovementLeft = (MovementDirection.x > 0.8 && MovementDirection.y > -0.3 && MovementDirection.y < 0.3);
+                var isMovementUp = (MovementDirection.y < -0.8 && MovementDirection.x > -0.3 && MovementDirection.x < 0.3);
+                var isMovementDown = (MovementDirection.y > 0.8 && MovementDirection.x > -0.3 && MovementDirection.x < 0.3);
+
+                foreach (var direction in directionValue)
+                {
+                    var isDirectionValid = false;
+                    if (direction.direction == Direction.right)
+                    {
+                        isDirectionValid = isMovementRight;
+                    }
+                    if (direction.direction == Direction.up)
+                    {
+                        isDirectionValid = isMovementUp;
+                    }
+                    if (direction.direction == Direction.left)
+                    {
+                        isDirectionValid = isMovementLeft;
+                    }
+                    if (direction.direction == Direction.down)
+                    {
+                        isDirectionValid = isMovementDown;
+                    }
+
+                    if (isDirectionValid && value >= direction.MinValue && value <= direction.MaxValue)
+                    {
+                        value += speed;
+                    }
+                }
+
             }
             lastPosition = Input.mousePosition;
         }
@@ -66,6 +101,8 @@ public class ChangeShaderValue : MonoBehaviour
                 waitDone = false;
             }
     }
+
+    
 
     private void SetRotation()
     {

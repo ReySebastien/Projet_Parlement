@@ -623,6 +623,23 @@ MonoBehaviour:
   buttonText: {fileID: 0}
   activeButton: {fileID: 0}
   popUp: {fileID: 1613050419}
+  direction: 0
+  directionValue:
+  - direction: 3
+    MinValue: 0
+    MaxValue: 0.12
+  - direction: 0
+    MinValue: 0.12
+    MaxValue: 0.365
+  - direction: 2
+    MinValue: 0.365
+    MaxValue: 0.62
+  - direction: 1
+    MinValue: 0.62
+    MaxValue: 0.87
+  - direction: 4
+    MinValue: 0.62
+    MaxValue: 1
 --- !u!1 &1003861242
 GameObject:
   m_ObjectHideFlags: 0
