@@ -20,16 +20,16 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _GradientTex:
-        m_Texture: {fileID: 2800000, guid: 88f7b5d6694e21b4ba34aec5cb17b28a, type: 3}
+        m_Texture: {fileID: 2800000, guid: b59e05b65f6e7f447bfc6b03e2f64146, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: 407543ed411192b4e9b4de4bf895d010, type: 3}
+        m_Texture: {fileID: 2800000, guid: 86ee777ac99dea145beeb93d75c803db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FillAmount: 1.0099994
+    - _FillAmount: 0.02
     - _MultiplyPower: 1
     m_Colors:
     - _ColorBase: {r: 0, g: 0, b: 0, a: 1}
