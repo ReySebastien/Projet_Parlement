@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 2100000, guid: a6051bafddddb8c42ada0b2f5f92b292, type: 2}
-  image: {fileID: 2800000, guid: 407543ed411192b4e9b4de4bf895d010, type: 3}
+  image: {fileID: 2800000, guid: a7bb1a7d361f5ea44939d339b2fd256c, type: 3}
   value: 0
   tolerance: 20
   speed: 0.01
@@ -627,18 +627,27 @@ MonoBehaviour:
   directionValue:
   - direction: 2
     MinValue: 0
-    MaxValue: 0.12
+    MaxValue: 0.2
   - direction: 1
-    MinValue: 0.12
-    MaxValue: 0.365
+    MinValue: 0.2
+    MaxValue: 0.42
   - direction: 3
-    MinValue: 0.365
-    MaxValue: 0.62
+    MinValue: 0.42
+    MaxValue: 0.47
   - direction: 0
-    MinValue: 0.62
-    MaxValue: 0.87
-  - direction: 2
-    MinValue: 0.62
+    MinValue: 0.47
+    MaxValue: 0.55
+  - direction: 3
+    MinValue: 0.55
+    MaxValue: 0.67
+  - direction: 1
+    MinValue: 0.67
+    MaxValue: 0.75
+  - direction: 3
+    MinValue: 0.75
+    MaxValue: 0.8
+  - direction: 0
+    MinValue: 0.8
     MaxValue: 1
 --- !u!1 &1003861242
 GameObject:
@@ -1349,7 +1358,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 800}
+  m_SizeDelta: {x: 2048, y: 553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613050419
 MonoBehaviour:
@@ -1371,7 +1380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b31f6b012bb9b2146bfe76247ac185e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9a6e1a05725a114da749434ca1fee71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

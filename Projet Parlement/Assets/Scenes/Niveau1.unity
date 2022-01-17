@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 2100000, guid: a6051bafddddb8c42ada0b2f5f92b292, type: 2}
-  image: {fileID: 2800000, guid: 86ee777ac99dea145beeb93d75c803db, type: 3}
+  image: {fileID: 2800000, guid: a7bb1a7d361f5ea44939d339b2fd256c, type: 3}
   value: 0
   tolerance: 20
   speed: 0.01
@@ -520,18 +520,27 @@ MonoBehaviour:
   directionValue:
   - direction: 2
     MinValue: 0
-    MaxValue: 0.12
+    MaxValue: 0.2
   - direction: 1
-    MinValue: 0.12
-    MaxValue: 0.365
+    MinValue: 0.2
+    MaxValue: 0.42
   - direction: 3
-    MinValue: 0.365
-    MaxValue: 0.62
+    MinValue: 0.42
+    MaxValue: 0.47
   - direction: 0
-    MinValue: 0.62
-    MaxValue: 0.87
-  - direction: 2
-    MinValue: 0.62
+    MinValue: 0.47
+    MaxValue: 0.55
+  - direction: 3
+    MinValue: 0.55
+    MaxValue: 0.67
+  - direction: 1
+    MinValue: 0.67
+    MaxValue: 0.75
+  - direction: 3
+    MinValue: 0.75
+    MaxValue: 0.8
+  - direction: 0
+    MinValue: 0.8
     MaxValue: 1
 --- !u!1 &1184845355
 GameObject:
