@@ -609,7 +609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 2100000, guid: a6051bafddddb8c42ada0b2f5f92b292, type: 2}
-  image: {fileID: 2800000, guid: a7bb1a7d361f5ea44939d339b2fd256c, type: 3}
+  image: {fileID: 2800000, guid: c311ecf78d2d64e4f9b392a5e6205035, type: 3}
+  gradient: {fileID: 2800000, guid: 9d2678ef3bfbf5840b7dff5ad524959b, type: 3}
   value: 0
   tolerance: 20
   speed: 0.01
@@ -625,29 +626,56 @@ MonoBehaviour:
   popUp: {fileID: 1613050419}
   direction: 0
   directionValue:
-  - direction: 2
+  - direction: 3
     MinValue: 0
-    MaxValue: 0.2
-  - direction: 1
-    MinValue: 0.2
-    MaxValue: 0.42
+    MaxValue: 0.01
+  - direction: 0
+    MinValue: 0.01
+    MaxValue: 0.25
   - direction: 3
     MinValue: 0.42
     MaxValue: 0.47
-  - direction: 0
-    MinValue: 0.47
-    MaxValue: 0.55
   - direction: 3
-    MinValue: 0.55
-    MaxValue: 0.67
+    MinValue: 0.25
+    MaxValue: 0.35
   - direction: 1
-    MinValue: 0.67
-    MaxValue: 0.75
-  - direction: 3
-    MinValue: 0.75
-    MaxValue: 0.8
+    MinValue: 0.35
+    MaxValue: 0.42
+  - direction: 2
+    MinValue: 0.42
+    MaxValue: 0.44
   - direction: 0
+    MinValue: 0.44
+    MaxValue: 0.48
+  - direction: 2
+    MinValue: 0.48
+    MaxValue: 0.537
+  - direction: 1
+    MinValue: 0.537
+    MaxValue: 0.565
+  - direction: 3
+    MinValue: 0.565
+    MaxValue: 0.569
+  - direction: 0
+    MinValue: 0.569
+    MaxValue: 0.6
+  - direction: 3
+    MinValue: 0.6
+    MaxValue: 0.66
+  - direction: 1
+    MinValue: 0.6
+    MaxValue: 0.695
+  - direction: 3
+    MinValue: 0.695
+    MaxValue: 0.71
+  - direction: 0
+    MinValue: 0.71
+    MaxValue: 0.8
+  - direction: 2
     MinValue: 0.8
+    MaxValue: 0.905
+  - direction: 1
+    MinValue: 0.905
     MaxValue: 1
 --- !u!1 &1003861242
 GameObject:
@@ -1017,7 +1045,7 @@ Camera:
   m_GameObject: {fileID: 1184845355}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

@@ -609,7 +609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 2100000, guid: a6051bafddddb8c42ada0b2f5f92b292, type: 2}
-  image: {fileID: 2800000, guid: a7bb1a7d361f5ea44939d339b2fd256c, type: 3}
+  image: {fileID: 2800000, guid: 2aa3566d0aab8e647861aeab2efb93e5, type: 3}
+  gradient: {fileID: 2800000, guid: 7580ea2738d430b4fbac809f122737d8, type: 3}
   value: 0
   tolerance: 20
   speed: 0.01
@@ -625,29 +626,38 @@ MonoBehaviour:
   popUp: {fileID: 1613050419}
   direction: 0
   directionValue:
-  - direction: 2
+  - direction: 0
     MinValue: 0
-    MaxValue: 0.2
-  - direction: 1
-    MinValue: 0.2
-    MaxValue: 0.42
+    MaxValue: 0.325
+  - direction: 3
+    MinValue: 0.325
+    MaxValue: 0.48
   - direction: 3
     MinValue: 0.42
     MaxValue: 0.47
-  - direction: 0
-    MinValue: 0.47
-    MaxValue: 0.55
-  - direction: 3
-    MinValue: 0.55
-    MaxValue: 0.67
   - direction: 1
-    MinValue: 0.67
-    MaxValue: 0.75
-  - direction: 3
-    MinValue: 0.75
-    MaxValue: 0.8
+    MinValue: 0.48
+    MaxValue: 0.612
+  - direction: 4
+    MinValue: 0.612
+    MaxValue: 0.65
+  - direction: 6
+    MinValue: 0.65
+    MaxValue: 0.679
   - direction: 0
-    MinValue: 0.8
+    MinValue: 0.679
+    MaxValue: 0.77
+  - direction: 2
+    MinValue: 0.77
+    MaxValue: 0.84
+  - direction: 1
+    MinValue: 0.84
+    MaxValue: 0.93
+  - direction: 4
+    MinValue: 0.93
+    MaxValue: 0.968
+  - direction: 6
+    MinValue: 0.968
     MaxValue: 1
 --- !u!1 &1003861242
 GameObject:
@@ -1017,7 +1027,7 @@ Camera:
   m_GameObject: {fileID: 1184845355}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

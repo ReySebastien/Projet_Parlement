@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ChangeShaderValue : MonoBehaviour
 {
     public Material shader;
-    public Texture2D image;
+    public Texture2D image,gradient;
     public float value;
     public float tolerance = 2;
     public float speed = 0.1f;
@@ -31,6 +31,7 @@ public class ChangeShaderValue : MonoBehaviour
     {
         value = 0;
         shader.SetTexture("_MainTexture", image);
+        shader.SetTexture("_GradientTex", gradient);
         parlement.enabled = false;
         button.enabled = false;
         buttonText.enabled = false;
@@ -53,6 +54,11 @@ public class ChangeShaderValue : MonoBehaviour
                 var isMovementLeft = (MovementDirection.x > 0.8 && MovementDirection.y > -0.3 && MovementDirection.y < 0.3);
                 var isMovementUp = (MovementDirection.y < -0.8 && MovementDirection.x > -0.3 && MovementDirection.x < 0.3);
                 var isMovementDown = (MovementDirection.y > 0.8 && MovementDirection.x > -0.3 && MovementDirection.x < 0.3);
+                var isMovementDiagUpRight = (MovementDirection.y > 0.8 && MovementDirection.x > 0.8);
+                var isMovementDiagUpLeft = (MovementDirection.y > 0.8 && MovementDirection.x > -0.8);
+                var isMovementDiagDownRight = (MovementDirection.y > -0.8 && MovementDirection.x > 0.8);
+                var isMovementDiagDownLeft = (MovementDirection.y > -0.8 && MovementDirection.x > -0.8);
+
 
                 foreach (var direction in directionValue)
                 {
@@ -72,6 +78,22 @@ public class ChangeShaderValue : MonoBehaviour
                     if (direction.direction == Direction.down)
                     {
                         isDirectionValid = isMovementDown;
+                    }
+                    if (direction.direction == Direction.diagUpRight)
+                    {
+                        isDirectionValid = isMovementDiagUpRight;
+                    }
+                    if (direction.direction == Direction.diagUpLeft)
+                    {
+                        isDirectionValid = isMovementDiagUpLeft;
+                    }
+                    if (direction.direction == Direction.diagDownRight)
+                    {
+                        isDirectionValid = isMovementDiagDownRight;
+                    }
+                    if (direction.direction == Direction.diagDownLeft)
+                    {
+                        isDirectionValid = isMovementDiagDownLeft;
                     }
 
                     if (isDirectionValid && value >= direction.MinValue && value <= direction.MaxValue)
