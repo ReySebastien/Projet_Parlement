@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class ChangeShaderValue : MonoBehaviour
 {
     public Material shader;
-    public Texture2D image;
+    public Texture2D image,gradient;
     public float value;
     public float tolerance = 2;
     public float speed = 0.1f;
     private Vector3 lastPosition;
-    public Renderer parlement;
+    public Renderer parlement1;
+    public Renderer parlement2;
+    public Renderer parlement3;
+    public Renderer parlement4;
+    public Renderer parlement5;
     public float speedCamera = 0.5f;
     public bool rotationDone = false;
     private bool isCoroutineExecuting = false;
@@ -31,7 +35,12 @@ public class ChangeShaderValue : MonoBehaviour
     {
         value = 0;
         shader.SetTexture("_MainTexture", image);
-        parlement.enabled = false;
+        shader.SetTexture("_GradientTex", gradient);
+        parlement1.enabled = false;
+        parlement2.enabled = false;
+        parlement3.enabled = false;
+        parlement4.enabled = false;
+        parlement5.enabled = false;
         button.enabled = false;
         buttonText.enabled = false;
         activeButton.SetActive(false);
@@ -53,6 +62,11 @@ public class ChangeShaderValue : MonoBehaviour
                 var isMovementLeft = (MovementDirection.x > 0.8 && MovementDirection.y > -0.3 && MovementDirection.y < 0.3);
                 var isMovementUp = (MovementDirection.y < -0.8 && MovementDirection.x > -0.3 && MovementDirection.x < 0.3);
                 var isMovementDown = (MovementDirection.y > 0.8 && MovementDirection.x > -0.3 && MovementDirection.x < 0.3);
+                var isMovementDiagUpRight = (MovementDirection.y > 0.8 && MovementDirection.x > 0.8);
+                var isMovementDiagUpLeft = (MovementDirection.y > 0.8 && MovementDirection.x > -0.8);
+                var isMovementDiagDownRight = (MovementDirection.y > -0.8 && MovementDirection.x > 0.8);
+                var isMovementDiagDownLeft = (MovementDirection.y > -0.8 && MovementDirection.x > -0.8);
+
 
                 foreach (var direction in directionValue)
                 {
@@ -73,6 +87,22 @@ public class ChangeShaderValue : MonoBehaviour
                     {
                         isDirectionValid = isMovementDown;
                     }
+                    if (direction.direction == Direction.diagUpRight)
+                    {
+                        isDirectionValid = isMovementDiagUpRight;
+                    }
+                    if (direction.direction == Direction.diagUpLeft)
+                    {
+                        isDirectionValid = isMovementDiagUpLeft;
+                    }
+                    if (direction.direction == Direction.diagDownRight)
+                    {
+                        isDirectionValid = isMovementDiagDownRight;
+                    }
+                    if (direction.direction == Direction.diagDownLeft)
+                    {
+                        isDirectionValid = isMovementDiagDownLeft;
+                    }
 
                     if (isDirectionValid && value >= direction.MinValue && value <= direction.MaxValue)
                     {
@@ -87,7 +117,11 @@ public class ChangeShaderValue : MonoBehaviour
 
         if (value>=1)
         {
-            parlement.enabled = true;
+            parlement1.enabled = true;
+            parlement2.enabled = true;
+            parlement3.enabled = true;
+            parlement4.enabled = true;
+            parlement5.enabled = true;
 
             if (rotationDone == false)
             {
